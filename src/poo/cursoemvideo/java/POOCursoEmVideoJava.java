@@ -11,7 +11,19 @@ public class POOCursoEmVideoJava {
         c1.carga = 90;
 
         c1.destampar();
+        c1.rabiscar();
         c1.status();        
+        
+        
+        Caneta c2 = new Caneta();
+        c1.modelo = "Bic";
+        c1.cor = "Vermelha";
+        c1.ponta = (float) 0.7;
+        c1.carga = 87;
+        
+        c1.tampar();
+        c1.rabiscar();
+        c1.status();
     }
     
 }

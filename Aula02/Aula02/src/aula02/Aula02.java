@@ -14,8 +14,17 @@ public class Aula02 {
         
         c1.destampar();
         c1.status();
-        
         c1.rabiscar();
+        
+        Caneta c2 = new Caneta();
+        c2.modelo = "Compactor";
+        c2.cor = "Vermelha";
+        c2.ponta = (float)0.7;
+        c2.carga = 56;
+        
+        c2.tampar();
+        c2.status();
+        c2.rabiscar();
         
     }
     

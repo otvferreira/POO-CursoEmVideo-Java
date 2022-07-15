@@ -13,7 +13,6 @@ public class Caneta {
         System.out.println("Ponta: " + this.ponta);
         System.out.println("Carga: " + this.carga + "%");
         System.out.println("Tampada: " + this.tampada);
-        System.out.println("");
     }
     void rabiscar(){
         if (this.tampada == true){

@@ -14,9 +14,11 @@ public class Caneta {
     private float ponta;
     private boolean tampada;
     
-    public void Caneta(){ //Construct
+    public Caneta(String m, String c, float p){ //Construct
+        this.modelo = m;
+        this.cor = c;
         this.tampar();
-        this.cor = "Azul";
+        this.ponta = p;
         
     }
     public String getmodelo(){
@@ -25,6 +27,14 @@ public class Caneta {
     
     public void setmodelo(String m){
         this.modelo = m;   
+    }
+    
+    public String getcor(){
+        return this.cor;
+    }
+    
+    public void setcot(String c){
+        this.cor = c;
     }
     
     public float getponta(){
@@ -45,7 +55,9 @@ public class Caneta {
     
     public void status(){
         System.out.println("Modelo: " + this.getmodelo());
+        System.out.println("Cor: " + this.getcor());
         System.out.println("Ponta: " + this.getponta());
+        System.out.println("Tampada: " + this.tampada);
     }
     
 }

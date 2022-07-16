@@ -17,9 +17,8 @@ public class Caneta {
     public Caneta(String m, String c, float p){ //Construct
         this.modelo = m;
         this.cor = c;
-        this.tampar();
         this.ponta = p;
-        
+        this.tampar();  
     }
     public String getmodelo(){
         return this.modelo;

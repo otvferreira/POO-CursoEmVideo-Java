@@ -8,7 +8,7 @@ package aula07;
  *
  * @author otvfe
  */
-public class Lutador {
+public final class Lutador {
     private String nome;
     private String nacionalidade;
     private int idade;
@@ -19,12 +19,7 @@ public class Lutador {
     private int derrotas;
     private int empates;
     
-    public Lutador(){
-        
-    }
-    
-
-    public void apresentar(String n, String nac, int id, float alt, float peso, String categ, int vit, int der, int emp){
+    public Lutador(String n, String nac, int id, float alt, float peso, String categ, int vit, int der, int emp){
         this.setNome(n);
         this.setNacionalidade(nac);
         this.setIdade(id);
@@ -34,6 +29,11 @@ public class Lutador {
         this.setVitorias(vit);
         this.setDerrotas(der);
         this.setEmpates(emp);
+    }
+    
+
+    public void apresentar(){
+
     }
     
     public void status(){

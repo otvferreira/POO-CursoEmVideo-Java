@@ -32,10 +32,6 @@ public final class Lutador {
     
 
     public void apresentar(){
-
-    }
-    
-    public void status(){
         System.out.println("-------------------------------------");
         System.out.println("Nome: " + this.getNome());
         System.out.println("Nacionalidade: " + this.getNacionalidade());
@@ -48,15 +44,27 @@ public final class Lutador {
         System.out.println("Empates: " + this.getEmpates());
     }
     
+    public void status(){
+        System.out.println("Nome: " + this.getNome());
+        System.out.println("Categoria: " + this.getCategoria());
+        System.out.println("Vitorias: " + this.getVitorias());
+        System.out.println("Derrotas: " + this.getDerrotas());
+        System.out.println("Empates: " + this.getEmpates());
+
+    }
+    
     public void ganharLuta(){
+        this.setVitorias(this.getVitorias() + 1);
         
     }
     
     public void perderLuta(){
+        this.setDerrotas(this.getDerrotas() + 1);
         
     }
     
     public void empatarLuta(){
+        this.setEmpates(this.getEmpates() + 1);
   
     }
 

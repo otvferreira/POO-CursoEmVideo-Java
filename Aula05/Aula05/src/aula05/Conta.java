@@ -9,74 +9,84 @@ package aula05;
  * @author otvfe
  */
 public class Conta {
-    public int  numConta;
+
+    public int numConta;
     protected String tipo; // CC - Corrente e CP - Poupanca
     private String dono;
     private float saldo;
     private boolean status;
     
+    public void estadoAtual(){
+        System.out.println("----------------------------------");
+        System.out.println("Conta: " + this.getNumConta());
+        System.out.println("Tipo: " + this.getTipo());
+        System.out.println("Nome: " + this.getDono());
+        System.out.println("Saldo: " + this.getSaldo());
+        System.out.println("Status: " + this.isStatus());
+    }
+    
     public Conta(){ // Construct
-        this.status = false;
-        this.saldo = 0;
+        this.setStatus(false);
+        this.setSaldo(0);
     
     }
     
     public void abrirConta(String t){
-        setTipo(t);
-        setStatus(true);
+        this.setTipo(t);
+        this.setStatus(true);
         
-        if (this.tipo == "CC"){
-            setSaldo(50);
-        } else if (this.tipo == "CP"){
-            setSaldo(150);
+        if (this.getTipo() == "CC"){
+            this.setSaldo(50);
+        } else if (this.getTipo() == "CP"){
+            this.setSaldo(150);
         }
         
     }
     
     public void fecharConta(){
-        if (this.saldo > 0){
+        if (this.getSaldo() > 0){
             System.out.println("Você possui saldo em sua conta, saque para fechar");
-        } else if (saldo < 0) {
-            System.out.println("Seu saldo é negativo, pague para fechar a conta");
+        } else if (this.getSaldo() < 0) {
+            System.out.println("Seu saldo é negativo, não é possível fechar a conta");
         } else {
             System.out.println("Conta fechada!");
-            this.status = false;
+            this.setStatus(false);
         }
     }
     
     public void depositar(float valord){
-        if (this.status == true){
-            setSaldo((float)(getSaldo() + valord));
+        if (this.isStatus()){
+            this.setSaldo((float)(this.getSaldo() + valord));
         } else {
             System.out.println("Conta fechada, não é possivel depositar!");
         }    
     }
     
     public void sacar(float valors){
-        if (this.status == true){
-            if (saldo >= valors){
-                setSaldo((float)(getSaldo() - valors));
+        if (this.isStatus()){
+            if (this.getSaldo() >= valors){
+                this.setSaldo((float)(this.getSaldo() - valors));
             } else {
                 System.out.println("Saldo Insuficiente!");
             }
         } else {
-            System.out.println("Saldo insuficiente!");
+            System.out.println("Impossivel sacar de uma conta fechada!");
         }
     }
     
     public void pagarMensal(){
         int v = 0;
-            if (getTipo() == "CC"){
+            if (this.getTipo() == "CC"){
                 v = 12;
-            } else if (getTipo() == "CP"){
+            } else if (this.getTipo() == "CP"){
                 v = 20;
             }
         
         
-        if (this.status == true){
-            if (getSaldo() >= v){
-                setSaldo(getSaldo() - v);   
-                System.out.println("Mensalidade paga, novo saldo " + getSaldo() + "R$");
+        if (this.isStatus()){
+            if (this.getSaldo() >= v){
+                this.setSaldo(this.getSaldo() - v);   
+                System.out.println("Mensalidade paga, novo saldo " + this.getSaldo() + "R$");
             } else {   
                 System.out.println("Saldo Insuficiente");
             }
@@ -85,7 +95,7 @@ public class Conta {
         }
     }
 
-    public float getNumConta() {
+    public int getNumConta() {
         return numConta;
     }
 
